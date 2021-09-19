@@ -1,0 +1,5 @@
+name: Dream_plugins
+version: ${project.version}
+main: me.cole.dream_plugins.Dream_plugins
+api-version: 1.17
+description: Plugins from Dream Video
