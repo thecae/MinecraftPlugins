@@ -89,7 +89,7 @@ public final class BlockShuffle extends JavaPlugin implements Listener {
                         }
                     }
                     if (timeLeft <= 10) {
-                        // if time less than 10, but on main screen and chat
+                        // if time less than 10, put on main screen and chat
                         Bukkit.broadcastMessage(ChatColor.GOLD + Integer.toString(timeLeft) + " seconds remaining!");
                         for (HashMap.Entry<Player, Material> entry : playerMap.entrySet()) {
                             entry.getKey().sendTitle(null, ChatColor.RED + Integer.toString(timeLeft), 5, 10, 5);
