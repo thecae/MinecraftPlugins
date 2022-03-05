@@ -1,4 +1,4 @@
-package com.bigbolev2.blockshuffle;
+package com.bigbolev2.plugins;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -33,8 +33,7 @@ public final class BlockShuffle extends JavaPlugin implements Listener {
         // register listener and command executor
         Bukkit.getPluginManager().registerEvents(this, this);
 
-        getCommand("startblockshuffle").setExecutor(new BlockShuffleStart(this));
-        getCommand("stopblockshuffle").setExecutor(new BlockShuffleEnd(this));
+        getCommand("blockshuffle").setExecutor(new BlockShuffleToggle(this));
 
         // make block list
         for (Material block : Material.values()) {
@@ -44,7 +43,7 @@ public final class BlockShuffle extends JavaPlugin implements Listener {
         }
 
         Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
-            int timeLeft = 300;
+            int timeLeft = 300; // five minutes
 
             @Override
             public void run() {
@@ -74,7 +73,6 @@ public final class BlockShuffle extends JavaPlugin implements Listener {
                         Bukkit.broadcastMessage(ChatColor.DARK_RED + entry.getKey().getDisplayName() + ChatColor.RED + " did not find their block ["+ ChatColor.DARK_RED + entry.getValue() + ChatColor.RED + "]!");
                         isRunning = false;
                         timeLeft = 300;
-                        return;
                     }
                 } else {
                     for (Player player : Bukkit.getOnlinePlayers()) {
