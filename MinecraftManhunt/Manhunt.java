@@ -1,4 +1,4 @@
-package com.bigbolev2.manhunt;
+package com.bigbolev2.plugins;
 
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;

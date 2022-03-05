@@ -1,4 +1,4 @@
-package com.bigbolev2.manhunt;
+package com.bigbolev2.plugins;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
