@@ -1,0 +1,6 @@
+name: DeathSwap
+version: '${project.version}'
+main: com.bigbolev2.plugins.DeathSwap
+api-version: 1.18
+authors: [ bigbolev2 ]
+description: A two-player game to kill each other via traps!
