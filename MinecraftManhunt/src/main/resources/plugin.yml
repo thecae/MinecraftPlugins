@@ -1,0 +1,6 @@
+name: MinecraftManhunt
+version: '${project.version}'
+main: com.bigbolev2.plugins.Manhunt
+api-version: 1.18
+authors: [ bigbolev2 ]
+description: Dream's Minecraft Manhunt
