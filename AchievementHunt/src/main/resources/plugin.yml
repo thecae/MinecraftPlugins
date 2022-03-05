@@ -1,0 +1,6 @@
+name: AchievementHunt
+version: '${project.version}'
+main: com.bigbolev2.plugins.AchievementHunt
+api-version: 1.18
+authors: [ bigbolev2 ]
+description: Challenges Users to Gain an Achievement in 5 minutes!
