@@ -1,10 +1,15 @@
 package com.bigbolev2.plugins;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.NamespacedKey;
 import org.bukkit.Particle;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,6 +33,7 @@ public final class Assassins extends JavaPlugin implements Listener {
             if (e.getEntity() == survivor && e.getDamager() != survivor) {
                 // auto kill player on one hit
                 e.setDamage(1000000);
+                Bukkit.broadcastMessage(ChatColor.GOLD + "The ASSASSINS have won!");
             }
         }
     }
@@ -38,6 +44,16 @@ public final class Assassins extends JavaPlugin implements Listener {
         if (e.getPlayer() != survivor && survivor.getEyeLocation() == e.getPlayer().getLocation()) {
             e.setCancelled(true);
             survivor.spawnParticle(Particle.DRIP_LAVA, survivor.getLocation(), 5);
+        }
+    }
+
+    // if ender dragon dies, player wins
+    @EventHandler
+    public void onAdvancement(PlayerAdvancementDoneEvent e) {
+        NamespacedKey key = e.getAdvancement().getKey();
+
+        if(key.getNamespace().equals(NamespacedKey.MINECRAFT) && key.getKey().equals("end/kill_dragon")) {
+            Bukkit.broadcastMessage(ChatColor.GOLD + "The SURVIVOR has won!");
         }
     }
 
