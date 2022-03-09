@@ -10,4 +10,7 @@ A list of projects, works in progress, and ideas will be listed below.  This wil
   * Minecraft Manhunt has taken Youtube by storm.  By running a command that indicates who is being hunted, the seekers are given a compass that points to the closest hunted person.  The hunted person has to try to defeat the Ender dragon before dying once.  If a hunted dies, they cannot respawn.  If all the hunted die before the Ender dragon is beaten, the hunters/seekers win.
 - **Bedwars**
    * A classic game that uses a pre-generated map with beds on islands and players compete to destory enemy beds.  If your bed is not broken, then you will respawn if you die.  If your bed is broken, you have one life left!  The last man standing wins!
-   
+- **Death Swap**
+    * A game of traps and trickery where players have five minutes to plan out ways to kill the other player! After the five minute timer, players will swap locations with another player and have to avoid death in the created trap! Players are not allowed to kill each other via melee methods.
+- **Assassins**
+    * A challenging game mode where the survivor is challenged with beating the game before they are hit once by an assassin! If the assassin hits them once, it's game over.  However, if the survivor looks at the assassin, they are unable to move!

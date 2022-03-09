@@ -1,0 +1,6 @@
+name: Assassins
+version: '${project.version}'
+main: com.bigbolev2.plugins.Assassins
+api-version: 1.18
+authors: [ bigbolev2 ]
+description: The intense, one-touch-only version of Manhunt!
