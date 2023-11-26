@@ -1,6 +1,9 @@
 name: Assassins
 version: '${project.version}'
 main: com.bigbolev2.plugins.Assassins
-api-version: 1.18
+api-version: 1.20
 authors: [ bigbolev2 ]
 description: The intense, one-touch-only version of Manhunt!
+commands:
+  assassins:
+    description: Assassins game command

@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class AssassinsStart implements CommandExecutor {
     private Assassins game;
 
-    public void AssassinsStart(Assassins game) { this.game = game; }
+    public AssassinsStart(Assassins game) { this.game = game; }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

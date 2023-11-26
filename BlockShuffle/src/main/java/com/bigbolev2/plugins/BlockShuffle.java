@@ -9,15 +9,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public final class BlockShuffle extends JavaPlugin implements Listener {
     // list of blocks
-    ArrayList<Material> blocks = new ArrayList<Material>();
-
+    ArrayList<Material> blocks = new ArrayList<>();
     // list of players and blocks
-    HashMap<Player, Material> playerMap = new HashMap<Player, Material>();
+    HashMap<Player, Material> playerMap = new HashMap<>();
 
     // is game running
     private boolean isRunning = false;

@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Particle;
-import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,8 +11,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.HashMap;
 
 public final class Assassins extends JavaPlugin implements Listener {
     private Player survivor;
@@ -24,6 +21,8 @@ public final class Assassins extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         System.out.println("[Assassins] Plugin Enabled.........");
+        Bukkit.getPluginManager().registerEvents(this, this);
+        getCommand("assassins").setExecutor(new AssassinsStart(this));
     }
 
     // if assassin hits them, instakill

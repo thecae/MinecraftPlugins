@@ -1,0 +1,6 @@
+name: RandomDrops
+version: '${project.version}'
+main: com.bigbolev2.plugins.Plugins
+api-version: 1.19
+authors: [ bigbolev2 ]
+description: Random Drops for Blocks!

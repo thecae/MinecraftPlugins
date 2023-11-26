@@ -16,10 +16,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public final class Manhunt extends JavaPlugin implements Listener {
 
-    enum Hunter {SURVIVOR, HUNTER, DEAD};
+    enum Hunter {SURVIVOR, HUNTER, DEAD}
 
     private boolean isRunning = false;
 
@@ -27,7 +28,7 @@ public final class Manhunt extends JavaPlugin implements Listener {
         isRunning = running;
     }
 
-    private HashMap<Player, Hunter> playerList = new HashMap<Player, Hunter>();
+    private final HashMap<Player, Hunter> playerList = new HashMap<>();
 
     // set survivors
     void setSurvivors(ArrayList<Player> survivors) {
@@ -41,6 +42,7 @@ public final class Manhunt extends JavaPlugin implements Listener {
         // make the compass
         ItemStack compass = new ItemStack(Material.COMPASS);
         ItemMeta compassMeta = compass.getItemMeta();
+        assert compassMeta != null;
         compassMeta.setDisplayName(ChatColor.RED + "Tracker");
         compassMeta.setUnbreakable(true);
         compass.addEnchantment(Enchantment.VANISHING_CURSE, 1);
@@ -75,7 +77,7 @@ public final class Manhunt extends JavaPlugin implements Listener {
     public void onClick(PlayerInteractEvent event) {
         if (isRunning) {
             // check if it is compass right-clicked in main hand
-            if (event.getHand().equals(EquipmentSlot.HAND)) {
+            if (Objects.equals(event.getHand(), EquipmentSlot.HAND)) {
                 if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
                     if (event.getItem() != null && event.getItem().getType().equals(Material.COMPASS)) {
                         Player sender = event.getPlayer();
@@ -127,7 +129,7 @@ public final class Manhunt extends JavaPlugin implements Listener {
             // count remaining hunted
             int count = 0;
             for (Player player : playerList.keySet()) {
-                if (playerList.get(player) == Hunter.SURVIVOR) { count++; }
+                if (playerList.get(player) == Hunter.SURVIVOR) { ++count; }
             }
 
             // if all hunted are dead, seekers win

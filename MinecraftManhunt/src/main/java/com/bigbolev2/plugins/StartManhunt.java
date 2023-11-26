@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class StartManhunt implements CommandExecutor {
 
-    private Manhunt manhunt;
+    private final Manhunt manhunt;
 
     public StartManhunt(Manhunt manhunt) {
         this.manhunt = manhunt;
@@ -25,7 +25,7 @@ public class StartManhunt implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length != 0) {
             // ensure that all given players are real players, if so add to list
-            ArrayList<Player> survivors = new ArrayList<Player>();
+            ArrayList<Player> survivors = new ArrayList<>();
 
             for (String name : args) {
                 Player player = Bukkit.getPlayer(name);

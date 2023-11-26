@@ -1,6 +1,11 @@
 name: MinecraftManhunt
 version: '${project.version}'
 main: com.bigbolev2.plugins.Manhunt
-api-version: 1.18
+api-version: 1.20
 authors: [ bigbolev2 ]
 description: Dream's Minecraft Manhunt
+commands:
+  startmanhunt:
+    description: The main command for Minecraft Manhunt
+  getcompass:
+    description: Get the compass to track the speedrunner

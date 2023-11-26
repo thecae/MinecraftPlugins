@@ -1,6 +1,9 @@
 name: BlockShuffle
 version: '${project.version}'
 main: com.bigbolev2.plugins.BlockShuffle
-api-version: 1.18
+api-version: 1.20
 authors: [ bigbolev2 ]
 description: Find and stand on a given block in five minutes!
+commands:
+  blockshuffle:
+    description: The main command for BlockShuffle

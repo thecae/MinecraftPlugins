@@ -17,6 +17,7 @@ public class ManhuntCompass implements CommandExecutor {
             // make the compass
             ItemStack compass = new ItemStack(Material.COMPASS);
             ItemMeta compassMeta = compass.getItemMeta();
+            assert compassMeta != null;
             compassMeta.setDisplayName(ChatColor.RED + "Tracker");
             compassMeta.setUnbreakable(true);
             compass.addEnchantment(Enchantment.VANISHING_CURSE, 1);
